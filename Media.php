@@ -31,7 +31,7 @@
                 <div class="collections-item-outer">
                     <div class="collection-item">
                         <video controls>
-                            <source src="video/<?php echo"$src"?>" type="video/mp4">
+                            <source video src="<?php echo"$src"?>" type="video/mp4">
                         </video>
                         <div class="collection-text">
 	                        </div>
@@ -43,7 +43,12 @@
                 ?>
                         <img src="image/<?php echo"$src"?>" alt="List picture" width="" height="">
                 <?php
-            }else {
+            }elseif( $res_select[$i]['type'] == 'src'){
+	                $src = $res_select[$i]['src'];
+	                ?>
+	                        <iframe src=\"<?php echo"$src"?>\" allowfullscreen=\"\" frameborder=\"0\"></iframe>
+	                <?php
+	            }else {
                 $src = $res_select[$i]['src'];
                 ?>
                 <audio controls>
